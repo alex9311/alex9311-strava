@@ -47,6 +47,8 @@ OAuth.registerService('strava', 2, null, function(query) {
   const userData = tokenResponse.athlete;
   const serviceData = {
     accessToken: tokenResponse.access_token,
+    refreshToken: tokenResponse.refresh_token,
+    accessTokenExpiresAt: tokenResponse.expires_at,
     id: userData.id
   };
 

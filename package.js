@@ -1,6 +1,6 @@
 Package.describe({
   name: 'alex93110:strava',
-  version: '0.0.1',
+  version: '0.0.3',
   summary: 'OAuth handler for Strava',
   git: 'https://github.com/alex9311/alex9311-strava',
   documentation: 'README.md'
