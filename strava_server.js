@@ -95,18 +95,18 @@ const getTokenResponse = function (query, config) {
     body: body_string
   };
 
-    var fut = new Future();
-    request(request_details, function(error, response, body) {
-       var responseContent;
-      try {
-        responseContent = JSON.parse(body);
-      } catch(e) {
-        error = new Meteor.Error(204, 'Response is not a valid JSON string.');
-        fut.throw(error);
-      } finally {
-        fut.return(responseContent);
-      }
-    });
-    var res = fut.wait();
-    return res;
+  var fut = new Future();
+  request(request_details, function(error, response, body) {
+     var responseContent;
+    try {
+      responseContent = JSON.parse(body);
+    } catch(e) {
+      error = new Meteor.Error(204, 'Response is not a valid JSON string.');
+      fut.throw(error);
+    } finally {
+      fut.return(responseContent);
+    }
+  });
+  var res = fut.wait();
+  return res;
 };

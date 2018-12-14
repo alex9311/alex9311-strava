@@ -54,7 +54,7 @@ Strava.requestCredential = function(options, credentialRequestCompleteCallback) 
     '&client_id=' + config.client_id +
     '&redirect_uri=' + OAuth._redirectUri('strava', config) +
     '&state=' + OAuth._stateParam(loginStyle, credentialToken) +
-    '&scope=activity:read_all,activity:write';
+    (!scope.trim() ? '' : '&scope=' + scope);
 
   /**
    * Client initiates OAuth login request (boilerplate)
